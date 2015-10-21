@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="OWNER-PC" name="com.hogai.webtest.search.FlightTest" tests="1" failures="1" timestamp="21 Oct 2015 21:22:40 GMT" time="110.063" errors="0">
+  <testcase name="flightSearchTest" time="75.221" classname="com.hogai.webtest.search.FlightTest">
+    <failure type="java.lang.NullPointerException">
+      <![CDATA[java.lang.NullPointerException
+	at java.lang.String.replace(Unknown Source)
+	at com.relevantcodes.extentreports.Logger.log(Logger.java:65)
+	at com.relevantcodes.extentreports.AbstractLog.log(AbstractLog.java:68)
+	at com.relevantcodes.extentreports.AbstractLog.log(AbstractLog.java:77)
+	at com.relevantcodes.extentreports.ExtentReports.log(ExtentReports.java:168)
+	at com.hogai.webtest.search.FlightTest.flightSearchTest(FlightTest.java:108)
+... Removed 25 stack frames]]>
+    </failure>
+  </testcase>
+</testsuite>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="OWNER-PC" name="com.hogai.webtest.search.testFlight" tests="1" failures="0" timestamp="21 Oct 2015 13:52:41 GMT" time="141.064" errors="0">
+  <testcase name="test" time="107.613" classname="com.hogai.webtest.search.testFlight"/>
+</testsuite>
