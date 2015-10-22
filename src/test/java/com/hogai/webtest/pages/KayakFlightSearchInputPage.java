@@ -34,6 +34,9 @@ public class KayakFlightSearchInputPage {
 	@FindBy(id = "travel_dates-end-wrapper")
 	private WebElement returnDateInputText;
 
+	/* Use Date Value from Dataprovider to parametrize the xpath string mapping here
+	 * e.g. "//div[@id='datepicker']/div[4]/span[2]/span[2]/span[5]/span["+departDateInput+"]/span"
+	 */
 	@FindBy(xpath = "//div[@id='datepicker']/div[4]/span[2]/span[2]/span[5]/span[2]/span")
 	private WebElement backDateInputCal;
 	
