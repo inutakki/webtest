@@ -3,9 +3,9 @@ README.txt
 
 Welcome to (Kayak) webtest Maven Project!
 
-Matrix Version Notes
+webtest Version Notes
 =========================
-The Matrix application version 1.00 was built and tested using java version "1.7". Please refer to \webtest\pom.xml for various other version details.
+The webtest project v1.00 was built and tested using java version "1.7". Please refer to \webtest\pom.xml for various other version details.
 webtest Project Workspace Organization has the following standard structure:
 
 ProjectName\
