@@ -36,7 +36,7 @@ import static org.openqa.selenium.OutputType.*;
 public class FlightTest {
     
 	WebDriver wd;
-	public static final ExtentReports extent = ExtentReports.get(FlightSearchTest.class); 
+	public static final ExtentReports extent = ExtentReports.get(FlightTest.class); 
 	static String reportLocation = "report\\";
 
 	
@@ -80,7 +80,7 @@ public class FlightTest {
     // Data Source - proxy for FlightSearchInputDP class
     @DataProvider(name = "FlightSearchInputDP")
     public Object[][] createData1() {
-     //return new Object[][] { { "ATL", "BOM" }, { "BOS", "BOM" }, { "SFO", "BOM" }}; // use for 3 iterations
+     //return new Object[][] { { "ATL", "BOM" }, { "BOS", "BOM" }, { "SFO", "BOM" }};
      return new Object[][] { { "ATL", "BOM" }};
     }
     
