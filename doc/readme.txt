@@ -1,7 +1,7 @@
 README.txt
 ==========
 
-Welcome to (Kayak) webtest Maven Project!
+Welcome to (Kayak Flights Availability Check) webtest Maven Project!
 
 webtest Version Notes
 =========================
