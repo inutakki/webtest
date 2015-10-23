@@ -49,11 +49,11 @@ d. Run Build to execute and get results like following
 
 Constraints/Restrictions
 ========================
-1. I do not want to hit the kayak.com production server in multithreaded mode from one IP so the multi-broser parallel option is not inluded 
+1. Please do not hit the kayak.com production server in multithreaded mode from one IP. The multi-browser parallel option is not included 
 in the TestNG.xml config file. It should be like
 
 <!-- Uncomment/Include for parallel execution
-  <test name="FireFoxTests">
+  <test name="InternetExplorerTests">
     <parameter name="browserName" value="IE"/>
     <parameter name="baseURL" value="http://www.kayak.com/flights"/>
      <classes>
@@ -61,7 +61,7 @@ in the TestNG.xml config file. It should be like
    </classes>
   </test>
 --!>
-  <!-- for parallel execution use parallel="true" in the suite element -->
+<!-- for parallel execution use parallel="true" in the suite element -->
 
 2. Use of Extent Reports is not fully complete but an HTML format of the report for management/business reporting is available at webtest\report\TestReport.html
   
@@ -72,7 +72,7 @@ Please contact manoj.pujari@gmail.com for support. I will be glad to be of assis
 Finally
 =======
 
-I hope that you find Sort easy and enjoyable to use!
+I hope that you find webtest easy and enjoyable to use!
 
 
 
