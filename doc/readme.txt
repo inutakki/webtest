@@ -21,7 +21,7 @@ This project includes the following as part of the compressed file package under
 
 Deliverable			FileName & Relative Location Path
 =========			===========================
-1. Compressed file package		webtest-ManojPujari.zip
+1. Project URL		https://github.com/firmsoil/webtest
 2. This File			webtest\doc\readme.txt
 3. Source Code			webtest\src\test\java\com\hogai\webtest\search\ (Flight Search source)
 				webtest\src\test\java\com\hogai\webtest\search\ (Page Object Model source)
