@@ -25,9 +25,13 @@ public class PhantomJSTest {
  
 		DesiredCapabilities caps = new DesiredCapabilities();
         caps.setJavascriptEnabled(true);  
+        
+        /*
         caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "C:\\Users\\mpujari"
         		+ "\\workspace\\webtest\\src\\test\\"
 				+ "resources\\phantomjs-2.0.0-windows\\bin\\phantomjs.exe");
+        */
+        caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "/usr/bin/phantomjs");
         WebDriver wd = new PhantomJSDriver(caps); 
         
         wd.get("http://www.google.com");
