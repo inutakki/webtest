@@ -32,15 +32,9 @@ public class PhantomJSTest {
         
         wd.get("http://www.google.com");
 		
-		System.out.println("Page Title is: "+wd.getTitle());
+		System.out.println("Page Title is: "+ wd.getTitle());
 		
 		WebTestSSUtil.captureScreenshot(wd, "getTitleTestSS");
-		
-		// RemoteWebDriver does not implement the TakesScreenshot class
-        // if the driver does have the Capabilities to take a screenshot
-        // then Augmenter will add the TakesScreenshot methods to the instance
-        //WebDriver augmentedDriver = new Augmenter().augment(wd);
-        //File screenshot = ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
 
 	}
 	
