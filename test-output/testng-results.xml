@@ -1,82 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="WebTestSuite" duration-ms="110063" started-at="2015-10-21T14:20:49Z" finished-at="2015-10-21T14:22:39Z">
+  <suite name="WebTestSuite" duration-ms="3384" started-at="2015-10-29T21:27:56Z" finished-at="2015-10-29T21:27:59Z">
     <groups>
     </groups>
-    <test name="FireFoxTests" duration-ms="110063" started-at="2015-10-21T14:20:49Z" finished-at="2015-10-21T14:22:39Z">
-      <class name="com.hogai.webtest.search.FlightTest">
-        <test-method status="PASS" signature="beforeTestSuite()" name="beforeTestSuite" is-config="true" duration-ms="396" started-at="2015-10-21T14:20:49Z" finished-at="2015-10-21T14:20:49Z">
-        </test-method>
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)" name="setUp" is-config="true" duration-ms="31103" started-at="2015-10-21T14:20:49Z" finished-at="2015-10-21T14:21:21Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://www.kayak.com/flights]]>
-              </value>
-            </param>
-          </params>
-        </test-method>
-        <test-method status="FAIL" signature="flightSearchTest(java.lang.String, java.lang.String)" name="flightSearchTest" duration-ms="75221" started-at="2015-10-21T14:21:21Z" finished-at="2015-10-21T14:22:36Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ATL]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[BOM]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at java.lang.String.replace(Unknown Source)
-	at com.relevantcodes.extentreports.Logger.log(Logger.java:65)
-	at com.relevantcodes.extentreports.AbstractLog.log(AbstractLog.java:68)
-	at com.relevantcodes.extentreports.AbstractLog.log(AbstractLog.java:77)
-	at com.relevantcodes.extentreports.ExtentReports.log(ExtentReports.java:168)
-	at com.hogai.webtest.search.FlightTest.flightSearchTest(FlightTest.java:108)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:673)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:842)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1166)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.runWorkers(TestRunner.java:1178)
-	at org.testng.TestRunner.privateRun(TestRunner.java:757)
-	at org.testng.TestRunner.run(TestRunner.java:608)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1158)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1083)
-	at org.testng.TestNG.run(TestNG.java:999)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:203)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:174)
-]]>
-            </full-stacktrace>
-          </exception>
-        </test-method>
-        <test-method status="PASS" signature="tearDown()" name="tearDown" is-config="true" duration-ms="3665" started-at="2015-10-21T14:22:36Z" finished-at="2015-10-21T14:22:39Z">
-        </test-method>
-      </class>
-    </test>
-  </suite>
+    <test name="FireFoxTests" duration-ms="3384" started-at="2015-10-29T21:27:56Z" finished-at="2015-10-29T21:27:59Z">
+      <class name="com.hogai.webtest.search.PhantomJSTest">
+        <test-method status="PASS" signature="getTitleTest()[pri:0, instance:com.hogai.webtest.search.PhantomJSTest@c184a81]" name="getTitleTest" duration-ms="3358" started-at="2015-10-29T14:27:56Z" finished-at="2015-10-29T14:27:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTitleTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.hogai.webtest.search.PhantomJSTest@c184a81]" name="tearDown" is-config="true" duration-ms="1" started-at="2015-10-29T14:27:59Z" finished-at="2015-10-29T14:27:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.hogai.webtest.search.PhantomJSTest -->
+    </test> <!-- FireFoxTests -->
+  </suite> <!-- WebTestSuite -->
 </testng-results>

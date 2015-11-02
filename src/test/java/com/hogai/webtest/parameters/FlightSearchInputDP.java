@@ -1,4 +1,4 @@
-package parameters;
+package com.hogai.webtest.parameters;
  
 import org.testng.annotations.DataProvider;
  
