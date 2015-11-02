@@ -32,7 +32,7 @@ public class PhantomJSTest {
         
         wd.get("http://www.google.com");
 		
-		System.out.println(wd.getTitle());
+		System.out.println("Page Title: "+wd.getTitle());
 		
 		WebTestSSUtil.captureScreenshot(wd, "getTitleTestSS");
 		
