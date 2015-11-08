@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-WebTestSuite">
-              <span class="suite-name border-passed">WebTestSuite</span>
+              <span class="suite-name border-failed">WebTestSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,7 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-WebTestSuite" class="hide-methods failed suite-WebTestSuite"> (hide)</a> <!-- hide-methods failed suite-WebTestSuite -->
+                      <a href="#" panel-name="suite-WebTestSuite" class="show-methods failed suite-WebTestSuite"> (show)</a> <!-- show-methods failed suite-WebTestSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-WebTestSuite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-WebTestSuite" title="com.hogai.webtest.search.BasicTest" hash-for-method="getTitleTestFail">getTitleTestFail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-WebTestSuite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,7 +115,7 @@
                     <div class="method-list-content passed suite-WebTestSuite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-WebTestSuite" title="com.hogai.webtest.search.PhantomJSTest" hash-for-method="getTitleTest">getTitleTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-WebTestSuite" title="com.hogai.webtest.search.BasicTest" hash-for-method="getTitleTestPass">getTitleTestPass</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-WebTestSuite -->
@@ -116,17 +130,40 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-WebTestSuite" class="panel WebTestSuite">
-          <div class="suite-WebTestSuite-class-passed">
+          <div class="suite-WebTestSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.hogai.webtest.search.PhantomJSTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.hogai.webtest.search.BasicTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="getTitleTest">
-                  </a> <!-- getTitleTest -->
-                  <span class="method-name">getTitleTest</span>
+                  <a name="getTitleTestFail">
+                  </a> <!-- getTitleTestFail -->
+                  <span class="method-name">getTitleTestFail</span>
+                  <div class="stack-trace">java.lang.AssertionError: PageTitle Mismatches expected [true] but found [false]
+	at com.hogai.webtest.search.BasicTest.getTitleTestFail(BasicTest.java:65)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Page Title Mismatch)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-WebTestSuite-class-failed -->
+          <div class="suite-WebTestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.hogai.webtest.search.BasicTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="getTitleTestPass">
+                  </a> <!-- getTitleTestPass -->
+                  <span class="method-name">getTitleTestPass</span>
+                  <em>
+(Page Title Match)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -141,13 +178,13 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;WebTestSuite&quot;&gt;
-  &lt;test name=&quot;FireFoxTests&quot;&gt;
-    &lt;parameter name=&quot;browserName&quot; value=&quot;firefox&quot;/&gt;
-    &lt;parameter name=&quot;baseURL&quot; value=&quot;http://www.kayak.com/flights&quot;/&gt;
+  &lt;test name=&quot;CI-CD-Tests&quot;&gt;
+    &lt;parameter name=&quot;browserName&quot; value=&quot;htmlUnit&quot;/&gt;
+    &lt;parameter name=&quot;baseURL&quot; value=&quot;http://www.google.com&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.hogai.webtest.search.PhantomJSTest&quot;/&gt;
+      &lt;class name=&quot;com.hogai.webtest.search.BasicTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- FireFoxTests --&gt;
+  &lt;/test&gt; &lt;!-- CI-CD-Tests --&gt;
 &lt;/suite&gt; &lt;!-- WebTestSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -159,7 +196,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">FireFoxTests (1 class)</span>
+                <span class="test-name">CI-CD-Tests (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -185,16 +222,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'getTitleTest')
-data.setCell(0, 2, 'com.hogai.webtest.search.PhantomJSTest')
-data.setCell(0, 3, 3358);
+data.setCell(0, 1, 'getTitleTestFail')
+data.setCell(0, 2, 'com.hogai.webtest.search.BasicTest')
+data.setCell(0, 3, 15);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'getTitleTestPass')
+data.setCell(1, 2, 'com.hogai.webtest.search.BasicTest')
+data.setCell(1, 3, 1);
 window.suiteTableData['WebTestSuite']= { tableData: data, tableDiv: 'times-div-WebTestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 16 ms</span>
               <div id="times-div-WebTestSuite">
               </div> <!-- times-div-WebTestSuite -->
             </div> <!-- times-div -->
@@ -220,14 +261,32 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.hogai.webtest.search.PhantomJSTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">getTitleTest</span>
+              <div class="chronological-class-name">com.hogai.webtest.search.BasicTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(htmlUnit, http://www.google.com)</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">getTitleTestFail</span>
+                <span class="method-start">2520 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">3364 ms</span>
+                <span class="method-start">2549 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(htmlUnit, http://www.google.com)</span>
+                <span class="method-start">2551 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">getTitleTestPass</span>
+                <span class="method-start">2787 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">2789 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

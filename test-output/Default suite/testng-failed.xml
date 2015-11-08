@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.hogai.webtest.search.PhantomJSTest">
+      <class name="com.hogai.webtest.search.BasicTest">
         <methods>
-          <include name="tearDown"/>
           <include name="getTitleTest"/>
         </methods>
-      </class> <!-- com.hogai.webtest.search.PhantomJSTest -->
+      </class> <!-- com.hogai.webtest.search.BasicTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

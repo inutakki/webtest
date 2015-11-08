@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="0" name="Failed suite [WebTestSuite]">
-  <parameter name="browserName" value="firefox"/>
-  <parameter name="baseURL" value="http://www.kayak.com/flights"/>
-  <test name="FireFoxTests(failed)" preserve-order="false">
-    <parameter name="browserName" value="firefox"/>
-    <parameter name="baseURL" value="http://www.kayak.com/flights"/>
+<suite name="Failed suite [WebTestSuite]">
+  <parameter name="browserName" value="htmlUnit"/>
+  <parameter name="baseURL" value="http://www.google.com"/>
+  <test name="CI-CD-Tests(failed)">
+    <parameter name="browserName" value="htmlUnit"/>
+    <parameter name="baseURL" value="http://www.google.com"/>
     <classes>
-      <class name="com.hogai.webtest.search.FlightTest">
+      <class name="com.hogai.webtest.search.BasicTest">
         <methods>
           <include name="tearDown"/>
-          <include name="beforeTestSuite"/>
+          <include name="getTitleTestFail"/>
           <include name="setUp"/>
-          <include name="flightSearchTest" invocation-numbers="0"/>
         </methods>
-      </class>
+      </class> <!-- com.hogai.webtest.search.BasicTest -->
     </classes>
-  </test>
-</suite>
+  </test> <!-- CI-CD-Tests(failed) -->
+</suite> <!-- Failed suite [WebTestSuite] -->
