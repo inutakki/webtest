@@ -59,7 +59,7 @@ public class BasicTest {
 		Assert.assertTrue(wd.getTitle().equalsIgnoreCase("Google"), "PageTitle Mismatches");
 	}
 	
-	@Test(description = "Page Title Mismatch")
+	@Test(description = "Page Title Mismatch", enabled = false)
 	public void getTitleFailTest() {
 		WebTestSSUtil.captureScreenshot(wd, "getTitleTestSS");
 		Assert.assertTrue(wd.getTitle().equalsIgnoreCase("NotGoogle"), "PageTitle Mismatch");
