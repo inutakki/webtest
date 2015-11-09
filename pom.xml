@@ -5,6 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Web Automation Testing</name>
   <description>Web Automation Testing Project</description>
+  <packaging>jar</packaging> 
 
 <properties>
 <suiteXmlFile>src/main/resources/WebTestSuite-Main.xml</suiteXmlFile>
