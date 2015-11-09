@@ -1,45 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="2" passed="1">
+<testng-results skipped="1" failed="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="WebTestSuite" duration-ms="2808" started-at="2015-11-08T16:22:29Z" finished-at="2015-11-08T16:22:32Z">
+  <suite name="Default suite" duration-ms="38" started-at="2015-11-09T00:14:36Z" finished-at="2015-11-09T00:14:36Z">
     <groups>
     </groups>
-    <test name="CI-CD-Tests" duration-ms="2808" started-at="2015-11-08T16:22:29Z" finished-at="2015-11-08T16:22:32Z">
+    <test name="Default test" duration-ms="38" started-at="2015-11-09T00:14:36Z" finished-at="2015-11-09T00:14:36Z">
       <class name="com.hogai.webtest.search.BasicTest">
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.hogai.webtest.search.BasicTest@576fb9a5]" name="setUp" is-config="true" duration-ms="2520" started-at="2015-11-08T08:22:29Z" finished-at="2015-11-08T08:22:32Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[htmlUnit]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://www.google.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="getTitleTestFail()[pri:0, instance:com.hogai.webtest.search.BasicTest@576fb9a5]" name="getTitleTestFail" duration-ms="15" started-at="2015-11-08T08:22:32Z" description="Page Title Mismatch" finished-at="2015-11-08T08:22:32Z">
-          <exception class="java.lang.AssertionError">
+        <test-method status="FAIL" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.hogai.webtest.search.BasicTest@416a8198]" name="setUp" is-config="true" duration-ms="0" started-at="2015-11-08T16:14:36Z" finished-at="2015-11-08T16:14:36Z">
+          <exception class="org.testng.TestNGException">
             <message>
-              <![CDATA[PageTitle Mismatches expected [true] but found [false]]]>
+              <![CDATA[
+Parameter 'browserName' is required by @Configuration on method setUp but has not been marked @Optional or defined
+in C:\Users\mpujari\AppData\Local\Temp\testng-eclipse--1942050644\testng-customsuite.xml]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: PageTitle Mismatches expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertTrue(Assert.java:42)
-	at com.hogai.webtest.search.BasicTest.getTitleTestFail(BasicTest.java:65)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'browserName' is required by @Configuration on method setUp but has not been marked @Optional or defined
+in C:\Users\mpujari\AppData\Local\Temp\testng-eclipse--1942050644\testng-customsuite.xml
+	at org.testng.internal.Parameters.createParameters(Parameters.java:155)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:358)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:86)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:199)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:653)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
@@ -60,39 +43,19 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getTitleTestFail -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.hogai.webtest.search.BasicTest@576fb9a5]" name="tearDown" is-config="true" duration-ms="1" started-at="2015-11-08T08:22:32Z" finished-at="2015-11-08T08:22:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.hogai.webtest.search.BasicTest@576fb9a5]" name="setUp" is-config="true" duration-ms="236" started-at="2015-11-08T08:22:32Z" finished-at="2015-11-08T08:22:32Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[htmlUnit]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[http://www.google.com]]>
-              </value>
-            </param>
-          </params>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="getTitleTestPass()[pri:0, instance:com.hogai.webtest.search.BasicTest@576fb9a5]" name="getTitleTestPass" duration-ms="1" started-at="2015-11-08T08:22:32Z" description="Page Title Match" finished-at="2015-11-08T08:22:32Z">
+        <test-method status="SKIP" signature="getTitlePassTest()[pri:0, instance:com.hogai.webtest.search.BasicTest@416a8198]" name="getTitlePassTest" duration-ms="7" started-at="2015-11-08T16:14:36Z" description="Page Title Match" finished-at="2015-11-08T16:14:36Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getTitleTestPass -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.hogai.webtest.search.BasicTest@576fb9a5]" name="tearDown" is-config="true" duration-ms="0" started-at="2015-11-08T08:22:32Z" finished-at="2015-11-08T08:22:32Z">
+        </test-method> <!-- getTitlePassTest -->
+        <test-method status="SKIP" signature="tearDown()[pri:0, instance:com.hogai.webtest.search.BasicTest@416a8198]" name="tearDown" is-config="true" duration-ms="0" started-at="2015-11-08T16:14:36Z" finished-at="2015-11-08T16:14:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.hogai.webtest.search.BasicTest -->
-    </test> <!-- CI-CD-Tests -->
-  </suite> <!-- WebTestSuite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

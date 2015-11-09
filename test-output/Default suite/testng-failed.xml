@@ -5,7 +5,7 @@
     <classes>
       <class name="com.hogai.webtest.search.BasicTest">
         <methods>
-          <include name="getTitleTest"/>
+          <include name="getTitlePassTest"/>
         </methods>
       </class> <!-- com.hogai.webtest.search.BasicTest -->
     </classes>
