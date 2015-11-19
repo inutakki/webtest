@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="WebTestSuite" verbose="1">
   <!-- for parallel execution use parallel="true" in the suite element above -->
-  <test name="CI-CD-Tests">
+  <test name="CI-CD-Tests" parallel="true">
     <parameter name="browserName" value="htmlUnit"/>
     <parameter name="baseURL" value="http://www.google.com"/>
      <classes>
-      <class name="com.hogai.webtest.search.BasicTest"/>
+      <class name="com.hogai.webtest.search.GridTest"/>
    </classes>
   </test>
  </suite>
