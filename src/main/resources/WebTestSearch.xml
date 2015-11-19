@@ -6,7 +6,8 @@
     <parameter name="browserName" value="htmlUnit"/>
     <parameter name="baseURL" value="http://www.google.com"/>
      <classes>
-      <class name="com.hogai.webtest.search.GridTest"/>
+      <class name="com.hogai.webtest.search.BasicTest"/>
+      <!-- class name="com.hogai.webtest.search.GridTest"/-->
    </classes>
   </test>
  </suite>
