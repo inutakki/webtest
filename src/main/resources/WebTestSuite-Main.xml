@@ -2,6 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="WebTestSuite-Main" verbose="1" >
 <suite-files>
-<suite-file path="./WebTestSearch.xml" /> 
+<suite-file path="./WebTestParallel.xml" /> 
 </suite-files> 
 </suite>
