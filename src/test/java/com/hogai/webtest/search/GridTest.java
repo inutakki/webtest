@@ -49,7 +49,7 @@ public class GridTest {
 		DesiredCapabilities cap = DesiredCapabilities.firefox();
 		cap.setBrowserName("firefox");
 		cap.setPlatform(Platform.LINUX);
-		wd = new RemoteWebDriver(new URL("http://52.33.203.97:4444/wd/hub"), cap);
+		wd = new RemoteWebDriver(new URL("http://52.32.43.42:4444/wd/hub"), cap);
 
 	}
 
