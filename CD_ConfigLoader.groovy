@@ -1,32 +1,37 @@
+/**
+ * Created by indira.nutakki on 1/26/2016.
+ */
 class CD_ConfigLoader {
 
     String artifactoryURL;
-    String artifactoryUname  ;
-    String artifactoryPassword;
+    String artifactoryPublishUser  ;
+    String artifactoryPublishPassword;
+    String releaseNumber;
 
 
 
-    def getArtifactoryURL(){
+  /*  def getArtifactoryURL(){
         return  this.artifactoryURL;
 
     }
 
-    def getArtifactoryUname(){
-        return  this.artifactoryUname;
+    def getArtifactoryPublishUser(){
+        return  this.artifactoryPublishUser;
 
     }
 
-    def getArtifactoryPassword(){
-        return this.artifactoryPassword;
+    def getArtifactoryPublishPassword(){
+        return this.artifactoryPublishPassword;
     }
+    def getArtifactoryreleaseNumber(){
+        return this.releaseNumber;
+    }*/
 
-    def createfromFile() {
-        def fileName = "C:\\Users\\indira.nutakki\\.jenkins\\PipeLineConfig.txt"
-
+    def readConfigProperties() {
+        def fileName = "PipeLineConfig.properties"
         String file = new File(fileName).getText();
         def lines = file.readLines();
        // println(lines[0])
-        def map = [:];
         for (item in lines) {
            // println item;
 
@@ -37,14 +42,36 @@ class CD_ConfigLoader {
                 case 'artifactoryURL':
                     this.artifactoryURL = value;
 
-                case 'artifactoryUname':
-                    this.artifactoryUname = value;
+                case 'artifactoryPublishUser':
+                    this.artifactoryPublishUser = value;
 
-                case 'artifactoryPassword':
-                    this.artifactoryPassword = value;
+                case 'artifactoryPublishPassword':
+                    this.artifactoryPublishPassword = value;
+                case 'releaseNumber':
+                    this.releaseNumber = value;
             }
         }
-
         return this;
+
     }
+
+    def buildStep(){
+        readConfigProperties();
+        StringBuilder sb = new StringBuilder();
+        String mvnGoal = "clean deploy";
+        String settingsFilePath = "/opt/apps/users/app/.m2/artifactory_settings.xml"
+
+        sb.append("sh \"{mvnHome}/bin/mvn -X " + mvnGoal +
+                    " -Pci -s "+settingsFilePath+
+                    " -DartifactoryURL=" + this.artifactoryURL +
+                    " -DartifactoryPublishUser=" + this.artifactoryPublishUser +
+                    " -DartifactoryPublishPassword="+ this.artifactoryPublishPassword +
+                    " -DreleaseNumber=" + this.releaseNumber + "\"");
+
+        return sb.toString();
+
+
+    }
+
+
 }
