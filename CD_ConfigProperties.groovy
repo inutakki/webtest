@@ -11,4 +11,12 @@ def getPublishUser(){
   return artifactoryPublishUser;
 }
 
+def getPublishPassword(){
+  return artifactoryPublishPassword;
+}
+
+def getReleaseNumber(){
+  return releaseNumber;
+}
+
 return this;
