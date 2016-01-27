@@ -1,0 +1,3 @@
+artifactoryURL= "C://jsahfjasdhfk"
+artifactoryUname= "asdf"
+artifactoryPassword= "sdj"
