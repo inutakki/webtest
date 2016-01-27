@@ -1,6 +1,7 @@
 artifactoryURL="http://jsahfjasdhfk.com/inutakki"
 artifactoryPublishUser="asdf"
 artifactoryPublishPassword="sdj"
+settingsFilePath="jskfjslafk.xml"
 releaseNumber="2016.02.0"
 
 
@@ -13,6 +14,9 @@ def getPublishUser(){
 
 def getPublishPassword(){
   return artifactoryPublishPassword;
+}
+def getSettingsFilePath(){
+  return settingsFilePath;
 }
 
 def getReleaseNumber(){
