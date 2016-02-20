@@ -1,4 +1,4 @@
-node {
+node('Windows') {
    // Mark the code checkout 'stage'....
    stage 'Checkout'
 
