@@ -1,21 +1,17 @@
-artifactoryPublishURL="http://artifactory"
-artifactoryUser="user"
-artifactoryPassword="user"
+node {
+   // Mark the code checkout 'stage'....
+   stage 'Checkout'
 
-def getArtifactoryPublishURL(){
+   // Checkout code from repository
+   checkout scm
 
-  return artifactoryPublishURL;
+   // Get the maven tool.
+   // ** NOTE: This 'M3' maven tool must be configured
+   // **       in the global configuration.
+   def mvnHome = tool 'M3'
 
-}
-
-def getArtifactoryUser(){
-
-  return artifactoryUser;
-
-}
-
-def getArtifactoryPassword(){
-
-  return artifactoryPassword;
-
+   // Mark the code build 'stage'....
+   stage 'Build'
+   // Run the maven build
+   sh "${mvnHome}/bin/mvn clean install"
 }
