@@ -15,8 +15,8 @@ def  getArr(){
   return(strArray);
 }
 
-def getMap(){
-  return profiles;
+def getMap(def buildType){
+  return profiles.get(buildType);
 }
 
 def getList(){
