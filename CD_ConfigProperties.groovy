@@ -6,7 +6,7 @@ releaseNumber="2016.02.0"
 def String[] s=["ci", "release"] as String[];
 
 def getArr(){
-  return s;
+  return s[];
 }
 
 
