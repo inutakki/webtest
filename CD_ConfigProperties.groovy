@@ -3,7 +3,7 @@ artifactoryPublishUser="asdf"
 artifactoryPublishPassword="sdj"
 settingsFilePath="jskfjslafk.xml"
 releaseNumber="2016.02.0"
-String[] s=["ci", "release"] as String[];
+def String[] s=["ci", "release"] as String[];
 
 def getArr(){
   return s;
