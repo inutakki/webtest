@@ -7,8 +7,14 @@ strArray = new String[2]
 strArray[0]="ci"
 strArray[1]="release"
 
+def map=[ci:"ci", release:"release"]
+
 def  getArr(){
   return(strArray);
+}
+
+def getMap(){
+  return map;
 }
 
 
