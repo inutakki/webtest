@@ -17,7 +17,8 @@ agent none
         steps {
         script{ 
 	 def testResult =  validator();
-          print( "testResult" + testResult);
+          print( "testResult: " + testResult);
+	schemaValidatorTest();
 	 sh(returnStdout: true, script: "node schemaValidtor.js");
            }
          }
