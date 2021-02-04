@@ -23,7 +23,7 @@ agent none
 	  
 	// sh "npm install";
     //def value = sh(returnStdout: true, script: "node validatorTest.js");
-	print("Executrion Test Result: ${value}")
+	print("Executrion Test Result: ${result}")
         print("----Before executing js file")
 	     sh(returnStdout: true, script: "node schemaValidator.js");
 	   // }	
