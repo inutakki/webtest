@@ -21,6 +21,8 @@ agent none
 	  dir('DoDCheck'){
 	     schemaValidatorTest();
 	     sh(returnStdout: true, script: "node schemaValidator.js");
+	    }	
+
            }
          }
       }
