@@ -20,9 +20,9 @@ agent none
           print( "testResult: " + testResult);
 	 // dir('DoDCheck'){
 	     schemaValidatorTest()
-	   sh "npm install";
-    def value = sh(returnStdout: true, script: "node validatorTest.js");
-	print("Executrion Test Result: ${value}")
+	  // sh "npm install";
+    //def value = sh(returnStdout: true, script: "node validatorTest.js");
+//	print("Executrion Test Result: ${value}")
         print("----Before executing js file")
 	     sh(returnStdout: true, script: "node schemaValidator.js");
 	   // }	
