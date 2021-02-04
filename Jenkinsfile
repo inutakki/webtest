@@ -18,8 +18,9 @@ agent none
         script{ 
 	 def testResult =  validator();
           print( "testResult: " + testResult);
-	schemaValidatorTest();
-	 sh(returnStdout: true, script: "node schemaValidator.js");
+	  dir('DoDCheck'){
+	     schemaValidatorTest();
+	     sh(returnStdout: true, script: "node schemaValidator.js");
            }
          }
       }
