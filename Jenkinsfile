@@ -1,17 +1,24 @@
-node('Windows') {
-   // Mark the code checkout 'stage'....
-   stage 'Checkout'
+@Library('Pipeline-shared-library') _
+pipeline {
+agent none
+    environment {
+        // Setting this to maven.  setEnv will not work without a build type
+        // Using gitHubHost - no function in utils for the Git Hub Host
+        buildType = "npm"
+        gitHubHost = "github.kp.org"
+        branchName = "${BRANCH_NAME}"
+        triggerBmxJavaTest = false
+        triggerBmxNodeTest = false
+    }
 
-   // Checkout code from repository
-   checkout scm
-
-   // Get the maven tool.
-   // ** NOTE: This 'M3' maven tool must be configured
-   // **       in the global configuration.
-   def mvnHome = tool 'M3'
-
-   // Mark the code build 'stage'....
-   stage 'Build'
-   // Run the maven build
-   sh "${mvnHome}/bin/mvn clean install"
+    stages {
+      stage('Initialization') {
+        agent {label 'unixNode'}
+        steps {
+           validator();
+	 sh(returnStdout: true, script: "node schemaValidtor.js");
+           
+         }
+      }
+  }
 }
