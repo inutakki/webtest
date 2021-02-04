@@ -16,7 +16,7 @@ agent none
         agent {label 'unixNode'}
         steps {
           def testResult =  validator();
-          println( "testResult" + testResult);
+          print( "testResult" + testResult);
 	 sh(returnStdout: true, script: "node schemaValidtor.js");
            
          }
