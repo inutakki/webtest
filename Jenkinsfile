@@ -19,7 +19,7 @@ agent none
 	 def testResult =  validator();
           print( "testResult: " + testResult);
 	 // dir('DoDCheck'){
-	     schemaValidatorTest()
+	     apiValidator("./definitions/swagger.yml") 
 	  // sh "npm install";
     //def value = sh(returnStdout: true, script: "node validatorTest.js");
 //	print("Executrion Test Result: ${value}")
