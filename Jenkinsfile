@@ -15,7 +15,8 @@ agent none
       stage('Initialization') {
         agent {label 'unixNode'}
         steps {
-           validator();
+          def testResult =  validator();
+          println( "testResult" + testResult);
 	 sh(returnStdout: true, script: "node schemaValidtor.js");
            
          }
