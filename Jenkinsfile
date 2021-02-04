@@ -15,10 +15,11 @@ agent none
       stage('Initialization') {
         agent {label 'unixNode'}
         steps {
-          def testResult =  validator();
+        script{ 
+	 def testResult =  validator();
           print( "testResult" + testResult);
 	 sh(returnStdout: true, script: "node schemaValidtor.js");
-           
+           }
          }
       }
   }
