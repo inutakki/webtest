@@ -17,7 +17,7 @@ agent none
         steps {
         script{ 
 	    def result =  apiValidator() 
-	  
+	    println("FinalResult: ${result}") 
            }
          }
       }
