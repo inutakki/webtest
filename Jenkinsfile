@@ -16,18 +16,8 @@ agent none
         agent {label 'unixNode'}
         steps {
         script{ 
-	 def testResult =  validator();
-          print( "testResult: " + testResult);
-	 // dir('DoDCheck'){
-	    def result =  apiValidator("./definitions/swagger.yml") 
+	    def result =  apiValidator() 
 	  
-	// sh "npm install";
-    //def value = sh(returnStdout: true, script: "node validatorTest.js");
-	print("Executrion Test Result: ${result}")
-        print("----Before executing js file")
-	     sh(returnStdout: true, script: "node schemaValidator.js");
-	   // }	
-
            }
          }
       }
