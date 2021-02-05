@@ -434,9 +434,9 @@ paths:
         - "$ref": "#/parameters/X-IBM-Client-Id"
         - "$ref": "#/parameters/X-Global-Transaction-Id"
         - "$ref": "#/parameters/X-correlationid"
-        - "$ref": "#/parameters/X-Env"
+         "$ref": "#/parameters/X-Env"
       responses:
-        "200":
+        "200:
           description: Request was successful
           headers:
             x-correlationid:
