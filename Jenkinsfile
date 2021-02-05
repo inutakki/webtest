@@ -16,7 +16,7 @@ agent none
         agent {label 'unixNode'}
         steps {
         script{ 
-	    def result =  apiValidator("./definitions/swagger.yaml")) 
+	    def result =  apiValidator("./definitions/swagger.yaml") 
 	    println("FinalResult: ${result}") 
            }
          }
