@@ -13,13 +13,13 @@ info:
 host: dit-rx-bff-kpweb-1.rx.ext-svc-bmxnp.appl.kp.org
 schemes:
   - https
-basePath: 
+basePath: / 
 produces:
   - application/json
-#paths:
-  "/address":
+paths:
+  "/address:
     get:
-      tags:
+      tags:i:
         - Address
       summary: Find all instances of the model matched by filter from the data source. Accepted filter types are 'all', 'shipping' and 'mailing'.
       description: >-
