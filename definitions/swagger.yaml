@@ -18,7 +18,7 @@ produces:
   - application/json
 paths:
   "/address":
-   #get:
+   get:
       tags:
         - Address
       summary: Find all instances of the model matched by filter from the data source. Accepted filter types are 'all', 'shipping' and 'mailing'.
