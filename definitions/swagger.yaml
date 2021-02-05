@@ -16,7 +16,7 @@ schemes:
 basePathi: / 
 produces:
   - application/json
-paths:
+#paths:
   "/address":
     get:
       tags:
