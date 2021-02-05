@@ -13,7 +13,7 @@ info:
 host: dit-rx-bff-kpweb-1.rx.ext-svc-bmxnp.appl.kp.org
 schemes:
   - https
-basePath: / 
+basePath / 
 produces:
   - application/json
 paths:
