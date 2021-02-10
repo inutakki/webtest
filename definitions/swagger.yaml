@@ -2614,7 +2614,7 @@ definitions:
           message:
             type: string
             example: "Internal Server Error"
-  #ServiceUnavailableError:
+  ServiceUnavailableError:
     type: object
     properties:
       executionContext:
