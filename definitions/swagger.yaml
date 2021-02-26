@@ -11,7 +11,7 @@ info:
     Log service and the backend SOR services & systems.
   version: 1.0.0
 host: dit-rx-bff-kpweb-1.rx.ext-svc-bmxnp.appl.kp.org
-scheme:
+schemes:
   - https
 basePath: / 
 produces:
