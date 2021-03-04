@@ -32,7 +32,7 @@ agent none
 			}
 		}
 	    }
-	    currentBuild.rawBuild.get
+	    //currentBuild.rawBuild.get
 	    def result =  apiValidator("./definitions/swagger.yaml") 
 	    println("FinalResult: ${result}") 
            }
