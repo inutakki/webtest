@@ -45,7 +45,7 @@ agent none
 	     //def buildCause = currentBuild.getBuildCauses()[0].shortDescription
 	     def buildCause = currentBuild.getBuildCauses()[0]
              echo "Current build was caused by: ${buildCause}\n"
-		echo "${test().getBuildtriggerCause()}"
+		echo "${test()}"
 	    //currentBuild.rawBuild.get
 	    def result =  apiValidator("./definitions/swagger.yaml") 
 	    println("FinalResult: ${result}") 
