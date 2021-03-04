@@ -1,4 +1,6 @@
 @Library('Pipeline-shared-library') _
+
+import com.cloudbees.groovy.cps.NonCPS
 pipeline {
 agent none
     environment {
