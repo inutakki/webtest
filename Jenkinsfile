@@ -17,6 +17,8 @@ agent none
       stage('Initialization') {
         agent {label 'unixNode'}
         steps {
+		
+        script{ 
 		@NonCPS
 		def getBuildtriggerCause(){
 		startedByTimer = false
@@ -31,7 +33,6 @@ agent none
 		}
 		return causeDescription
 	}
-        script{ 
 	    def commitHash = sh (returnStdout: true, script: "git log -n 1 --pretty=format:'%H'")
             
             env.GIT_COMMIT_MSG = sh(returnStdout: true, script: "git log -1 --pretty=%B ${GIT_COMMIT}").trim()
