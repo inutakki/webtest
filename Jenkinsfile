@@ -15,6 +15,20 @@ agent none
       stage('Initialization') {
         agent {label 'unixNode'}
         steps {
+		@NonCPS
+		def getBuildtriggerCause(){
+		startedByTimer = false
+		def buildCauses = currentBuild.rawBuild.getCauses()
+		for ( buildCause in buildCauses ) {
+			if (buildCause != null) {
+				def causeDescription = buildCause.getShortDescription()
+				if (causeDescription.contains("Started by timer")) {
+					startedByTimer = true
+				}
+			}
+		}
+		return causeDescription
+	}
         script{ 
 	    def commitHash = sh (returnStdout: true, script: "git log -n 1 --pretty=format:'%H'")
             
@@ -41,7 +55,7 @@ agent none
 	     //def buildCause = currentBuild.getBuildCauses()[0].shortDescription
 	     def buildCause = currentBuild.getBuildCauses()[0]
              echo "Current build was caused by: ${buildCause}\n"
-
+		echo "${getBuildtriggerCause()}"
 	    //currentBuild.rawBuild.get
 	    def result =  apiValidator("./definitions/swagger.yaml") 
 	    println("FinalResult: ${result}") 
