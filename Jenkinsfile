@@ -1,22 +1,8 @@
 @Library('Pipeline-shared-library') _
 
-import com.cloudbees.groovy.cps.NonCPS
 pipeline {
 agent none
-	@NonCPS
-		def getBuildtriggerCause(){
-		startedByTimer = false
-		def buildCauses = currentBuild.rawBuild.getCauses()
-		for ( buildCause in buildCauses ) {
-			if (buildCause != null) {
-				def causeDescription = buildCause.getShortDescription()
-				if (causeDescription.contains("Started by timer")) {
-					startedByTimer = true
-				}
-			}
-		}
-		return causeDescription
-	}
+
     environment {
         // Setting this to maven.  setEnv will not work without a build type
         // Using gitHubHost - no function in utils for the Git Hub Host
@@ -59,7 +45,7 @@ agent none
 	     //def buildCause = currentBuild.getBuildCauses()[0].shortDescription
 	     def buildCause = currentBuild.getBuildCauses()[0]
              echo "Current build was caused by: ${buildCause}\n"
-		echo "${getBuildtriggerCause()}"
+		echo "${test().getBuildtriggerCause()}"
 	    //currentBuild.rawBuild.get
 	    def result =  apiValidator("./definitions/swagger.yaml") 
 	    println("FinalResult: ${result}") 
