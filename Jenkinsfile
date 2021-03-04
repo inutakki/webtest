@@ -23,12 +23,18 @@ agent none
 	    println("displayname: ${currentBuild.displayName}")
 	    //println("build cause trigger: ${BUILD_CAUSE}")
 	    //println("build cause timer trigger: ${BUILD_CAUSE_TIMERTRIGGER}")
-	    def buildCauses = currentBuild.rawBuild.getCauses()
+	    //def buildCauses = currentBuild.rawBuild.getCauses()
 	    for ( buildCause in buildCauses ) {
 		if (buildCause != null) {
 			def causeDescription = buildCause.getShortDescription()
 			if (causeDescription.contains("Started by timer")) {
 				startedByTimer = true
+			}
+			if(buildCause instanceof(hudson.model.Cause$UserIdCause)){
+				println("triggered by User")
+			}
+			if(buildCause instanceof(jenkins.branch.BranchIndexingCause)){
+				println("triggered by branch indexing")
 			}
 		}
 	    }
