@@ -30,10 +30,10 @@ agent none
 			if (causeDescription.contains("Started by timer")) {
 				startedByTimer = true
 			}
-			if(buildCause instanceof(hudson.model.Cause$UserIdCause)){
+			if(buildCause instanceof hudson.model.Cause$UserIdCause){
 				println("triggered by User")
 			}
-			if(buildCause instanceof(jenkins.branch.BranchIndexingCause)){
+			if(buildCause instanceof jenkins.branch.BranchIndexingCause){
 				println("triggered by branch indexing")
 			}
 		}
