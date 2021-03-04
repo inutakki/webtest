@@ -23,7 +23,7 @@ agent none
 	    println("displayname: ${currentBuild.displayName}")
 	    //println("build cause trigger: ${BUILD_CAUSE}")
 	    //println("build cause timer trigger: ${BUILD_CAUSE_TIMERTRIGGER}")
-	    //def buildCauses = currentBuild.rawBuild.getCauses()
+	    def buildCauses = currentBuild.rawBuild.getCauses()
 	    for ( buildCause in buildCauses ) {
 		if (buildCause != null) {
 			def causeDescription = buildCause.getShortDescription()
