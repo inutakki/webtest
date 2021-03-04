@@ -3,6 +3,20 @@
 import com.cloudbees.groovy.cps.NonCPS
 pipeline {
 agent none
+	@NonCPS
+		def getBuildtriggerCause(){
+		startedByTimer = false
+		def buildCauses = currentBuild.rawBuild.getCauses()
+		for ( buildCause in buildCauses ) {
+			if (buildCause != null) {
+				def causeDescription = buildCause.getShortDescription()
+				if (causeDescription.contains("Started by timer")) {
+					startedByTimer = true
+				}
+			}
+		}
+		return causeDescription
+	}
     environment {
         // Setting this to maven.  setEnv will not work without a build type
         // Using gitHubHost - no function in utils for the Git Hub Host
@@ -19,20 +33,7 @@ agent none
         steps {
 		
         script{ 
-		@NonCPS
-		def getBuildtriggerCause(){
-		startedByTimer = false
-		def buildCauses = currentBuild.rawBuild.getCauses()
-		for ( buildCause in buildCauses ) {
-			if (buildCause != null) {
-				def causeDescription = buildCause.getShortDescription()
-				if (causeDescription.contains("Started by timer")) {
-					startedByTimer = true
-				}
-			}
-		}
-		return causeDescription
-	}
+		
 	    def commitHash = sh (returnStdout: true, script: "git log -n 1 --pretty=format:'%H'")
             
             env.GIT_COMMIT_MSG = sh(returnStdout: true, script: "git log -1 --pretty=%B ${GIT_COMMIT}").trim()
