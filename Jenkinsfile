@@ -23,7 +23,7 @@ agent none
 	    println("displayname: ${currentBuild.displayName}")
 	    //println("build cause trigger: ${BUILD_CAUSE}")
 	    //println("build cause timer trigger: ${BUILD_CAUSE_TIMERTRIGGER}")
-	    def buildCauses = currentBuild.rawBuild.getCauses()
+	    /*def buildCauses = currentBuild.rawBuild.getCauses()
 	    for ( buildCause in buildCauses ) {
 		if (buildCause != null) {
 			def causeDescription = buildCause.getShortDescription()
@@ -37,7 +37,10 @@ agent none
 				println("triggered by branch indexing")
 			}
 		}
-	    }
+	    }*/
+	     def buildCause = currentBuild.getBuildCauses()[0].shortDescription
+             echo "Current build was caused by: ${buildCause}\n"
+
 	    //currentBuild.rawBuild.get
 	    def result =  apiValidator("./definitions/swagger.yaml") 
 	    println("FinalResult: ${result}") 
