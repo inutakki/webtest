@@ -39,7 +39,7 @@ agent none
 		}
 	    }*/
 	     //def buildCause = currentBuild.getBuildCauses()[0].shortDescription
-	     def buildCause = currentBuild.getBuildCauses()[0].shortDescription
+	     def buildCause = currentBuild.getBuildCauses()[0]
              echo "Current build was caused by: ${buildCause}\n"
 
 	    //currentBuild.rawBuild.get
