@@ -18,7 +18,7 @@ agent none
         steps {
 		
         script{ 
-		
+	    def jsonSample = getjsonArguments()
 	    def commitHash = sh (returnStdout: true, script: "git log -n 1 --pretty=format:'%H'")
             
             env.GIT_COMMIT_MSG = sh(returnStdout: true, script: "git log -1 --pretty=%B ${GIT_COMMIT}").trim()
