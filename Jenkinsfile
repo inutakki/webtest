@@ -20,6 +20,10 @@ agent none
         script{ 
 	    def jsonSample = getjsonArguments()
 	    def commitHash = sh (returnStdout: true, script: "git log -n 1 --pretty=format:'%H'")
+		sh """
+    curl  -L -O https://github.com/thoughtworks/talisman/releases/download/v1.11.0/talisman_darwin_amd64;
+    chmod +x talisman_darwin_amd64; ./talisman_darwin_amd64 --scan	
+    """
             
             env.GIT_COMMIT_MSG = sh(returnStdout: true, script: "git log -1 --pretty=%B ${GIT_COMMIT}").trim()
             println("GitCommitMessage: ${env.GIT_COMMIT_MSG}")
