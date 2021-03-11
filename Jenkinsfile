@@ -18,8 +18,8 @@ agent none
         steps {
 		
         script{ 
-	    def jsonSample = getjsonArguments()
-	    def commitHash = sh (returnStdout: true, script: "git log -n 1 --pretty=format:'%H'")
+	    //def jsonSample = getjsonArguments()
+	    //def commitHash = sh (returnStdout: true, script: "git log -n 1 --pretty=format:'%H'")
 		sh """
     curl  -L -O https://github.com/thoughtworks/talisman/releases/download/v1.11.0/talisman_darwin_amd64;
     chmod +x talisman_darwin_amd64; ./talisman_darwin_amd64 --scan	
