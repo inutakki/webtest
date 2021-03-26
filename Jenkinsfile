@@ -25,6 +25,8 @@ agent none
             env.GIT_COMMIT_MSG = sh(returnStdout: true, script: "git log -1 --pretty=%B ${GIT_COMMIT}").trim()
             println("GitCommitMessage: ${env.GIT_COMMIT_MSG}")
 	    println("displayname: ${currentBuild.displayName}")
+	    def branchName = git name-rev "${GIT_COMMIT}"
+	    println("branch Name:" + branchName)
 	    //println("build cause trigger: ${BUILD_CAUSE}")
 	    //println("build cause timer trigger: ${BUILD_CAUSE_TIMERTRIGGER}")
 	    /*def buildCauses = currentBuild.rawBuild.getCauses()
