@@ -23,8 +23,8 @@ agent none
 	    env.GIT_COMMIT_MSG = sh(returnStdout: true, script: "git log -1 --pretty=%B ${GIT_COMMIT}").trim()
             println("GitCommitMessage: ${env.GIT_COMMIT_MSG}")
 	    println("displayname: ${currentBuild.displayName}")
-	    def branchName = sh(returnStdout: true, script: "git name-rev ${GIT_COMMIT}").split(/)[-1]
-	    println("branch Name:" + branchName)
+	    def branchName = sh(returnStdout: true, script: "git name-rev ${GIT_COMMIT}")
+	    println("branch Name:" + branchName.split("/")[-1])
 		sh ( returnStdout: true, script:  "curl -L -O https://github.com/thoughtworks/talisman/releases/download/v1.11.0/talisman_darwin_amd64; chmod +x talisman_darwin_amd64; ./talisman_darwin_amd64 --scan")
             
             
