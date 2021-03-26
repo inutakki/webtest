@@ -20,13 +20,14 @@ agent none
         script{ 
 	    //def jsonSample = getjsonArguments()
 	    //def commitHash = sh (returnStdout: true, script: "git log -n 1 --pretty=format:'%H'")
-		sh ( returnStdout: true, script:  "curl -L -O https://github.com/thoughtworks/talisman/releases/download/v1.11.0/talisman_darwin_amd64; chmod +x talisman_darwin_amd64; ./talisman_darwin_amd64 --scan")
-            
-            env.GIT_COMMIT_MSG = sh(returnStdout: true, script: "git log -1 --pretty=%B ${GIT_COMMIT}").trim()
+	    env.GIT_COMMIT_MSG = sh(returnStdout: true, script: "git log -1 --pretty=%B ${GIT_COMMIT}").trim()
             println("GitCommitMessage: ${env.GIT_COMMIT_MSG}")
 	    println("displayname: ${currentBuild.displayName}")
 	    def branchName = git name-rev "${GIT_COMMIT}"
 	    println("branch Name:" + branchName)
+		sh ( returnStdout: true, script:  "curl -L -O https://github.com/thoughtworks/talisman/releases/download/v1.11.0/talisman_darwin_amd64; chmod +x talisman_darwin_amd64; ./talisman_darwin_amd64 --scan")
+            
+            
 	    //println("build cause trigger: ${BUILD_CAUSE}")
 	    //println("build cause timer trigger: ${BUILD_CAUSE_TIMERTRIGGER}")
 	    /*def buildCauses = currentBuild.rawBuild.getCauses()
